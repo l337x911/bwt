@@ -90,10 +90,7 @@ def make_sa(s):
     [6, 5, 3, 1, 0, 4, 2]
 
     """
-    suffixes = {s[i:] : i for i in range(len(s))}
-    return list(suffixes[suffix]
-                for suffix in sorted(suffixes.keys()))
-
+    return list(sorted(range(len(s)), key=lambda i:s[i:]))
 
 def make_bwt(s, sa=None):
     r"""Computes the Burrows-Wheeler transform from a suffix array.
